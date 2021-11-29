@@ -1,0 +1,160 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#body{
+    background-image: url("./images/backgrounds/Full\ Usa.png");
+    background-color: rgb(43, 43, 43);
+    /* background-size:cover; */
+    background-size: 1452px;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    transition: .6s;
+}
+/* -------------global------------ */
+.marker{
+    font-size: 60px;
+    position: fixed;
+    cursor: pointer;
+    color: #00365f;
+    transition: .6s;
+    background-color: Transparent;
+    border: none;
+    overflow: hidden;
+}
+    
+    .marker:hover{
+        color: #003a69;
+        transition: .6s;
+}
+
+.back{
+    font-size: 60px;
+    color: rgb(105, 105, 105);
+    position: fixed;
+    top: 30px;
+    left: 33px;
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    transition: .6s;
+}
+
+    .back:hover{
+        font-size: 60px;
+        color: rgb(70, 70, 70);
+        position: fixed;
+        left: 28px;
+        background-color: Transparent;
+        border: none;
+        cursor:pointer;
+        overflow: hidden; 
+        transition: 1s;
+    }
+#img1{
+    width: auto; 
+    height: 200px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    margin-right: 10px;
+    border-radius: 20px; 
+    transition: .3s; 
+}
+
+#img1:hover{
+    transition: .6s;
+    transform: scale(150%);
+    margin: 100px 150px;
+}
+#img{
+    width: auto; 
+    height: 200px; 
+    margin: 50px 10px; 
+    border-radius: 20px; 
+    transition: .3s;
+}
+
+#img:hover{
+    transition: .6s;
+    transform: scale(150%);
+    margin: 100px;
+}
+/* -------x-----global------x----- */
+
+#fullscreen{
+    margin: 0%;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 100%;
+    display: none;
+}
+
+/* -------------usa------------ */
+#usa-vancouver{
+    font-size: 60px;
+    top: 160px;
+    left: 295px;
+}
+#usa-vancouver:hover{
+    top: 154px;
+}
+
+#usa-east-coast{
+    font-size: 60px;
+    top: 343px;
+    left: 1047px;
+}
+#usa-east-coast:hover{
+    top: 337px;  
+}
+
+/* --------x----usa-------x---- */
+
+
+/* -------------east coast------------ */
+#east-nyc{
+    font-size: 60px;
+    top: 400px;
+    left: 563px;
+    display: none;
+}
+
+#east-nyc:hover{
+    top: 394px;
+}
+
+#east-og{
+    font-size: 60px;
+    top: 228px;
+    left: 762px;
+    display: none;
+}
+
+#east-og:hover{
+    top: 222px;
+}
+
+#east-oldplace{
+    font-size: 60px;
+    top: 480px;
+    left: 570px;
+    display: none;
+}
+
+#east-oldplace:hover{
+    top: 474px;
+}
+
+#east-newplace{
+    font-size: 60px;
+    top: 360px;
+    left: 590px;
+    display: none;
+}
+
+#east-newplace:hover{
+    top: 354px;
+}
+
+/* -------x-----east coast------x----- */

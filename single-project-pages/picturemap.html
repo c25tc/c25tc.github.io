@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/Logo.png" alt="logo" width="125px"></a>                    
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../journel.html">Journel</a></li>
+                        <li><a href="">About</a></li>
+                    </ul>
+                </nav>
+                <i class="fa fa-bars menu-icon" onclick="menutoggle()"></i>
+            </div>
+        </div>
+<!-- ------------------ single products details --------------- -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2"> 
+                <img src="../images/Map Main.png" width="100%" id="product-img">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="../images/Map Main.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="../images/Map 1.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="../images/Map 2.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="../images/Map 3.png" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Interactive Picture Map</h1>
+                <h3>Overview</h3>
+                <p>
+                    I made this for my grandma who we ussually see at least twice a year but because of covid we have not seen each other
+                    in a while.
+                </p>
+                <h4><a href="../interactive map copy/map.html">see the project here</a></h4>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="title">Journel Entries</h1>
+    
+    
+    <!-- ----------- footer ------------- -->
+    <div class="footer">
+        
+    </div>
+    <script>
+        var MenuItems = document.getElementById('MenuItems')
+
+        MenuItems.style.maxHeight = "0px"
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight = "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px";
+                }
+        }
+
+        // -------- product gallary ----------
+
+        var productImg = document.getElementById('product-img')
+        var smallImg = document.getElementsByClassName('small-img')
+
+        smallImg[0].onclick = function(){
+            productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function(){
+            productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function(){
+            productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function(){
+            productImg.src = smallImg[3].src;
+        }
+
+
+    </script>
+</body>
+</html>

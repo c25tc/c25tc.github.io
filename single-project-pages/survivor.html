@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/Logo.png" alt="logo" width="125px"></a>                    
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../journel.html">Journel</a></li>
+                        <li><a href="">About</a></li>
+                    </ul>
+                </nav>
+                <i class="fa fa-bars menu-icon" onclick="menutoggle()"></i>
+            </div>
+        </div>
+<!-- ------------------ single products details --------------- -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2"> 
+                <img src="../images/Survivor Main.png" width="100%" id="product-img">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="../images/Survivor Main.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="../images/Survivor 1.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="../images/Survivor 2.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="../images/Survivor 3.png" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Survivor</h1>
+                <h3>Overview</h3>
+                <p>
+                    It is a game where you try to survive as long as possible by getting powerups and avoiding enemies
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="title">Journel Entries</h1>
+    <div class="row">
+        <div class="journel-entry">
+            <h1>9/27</h1>
+            <h4 id="hashtag">#survivor</h4>
+            <p>This week I focused alot on my game. I actually started it this weekend and then worked on
+                it during my spare time. I created a new pygame project in pycharm without really knowing 
+                what I wanted to make. I just knew that I wanted to create a game. I decided to start
+                by making a simple platformer game using a tile system. I created all of the pixle art and
+                then transported them into their folders. Then I made a level creater so that it would be
+                easier to make. By then I had a very rouph idea of what I wanted the game to be. I wanted
+                to create a game that the player tries to last as long as they can while avoiding enemies.
+                I also wanted there to be powerups that you can collect like a higher jump or faster speed.
+                I then came up with a very interesting idea. I decided to try to create an infinint world.
+                I had to make it so that the world only generated around the player so that the game would not
+                glich immidiatly. I also had to make it so that the level looked somewhat okay, I could not
+                just place random blocks. I finally decided on trying to use a chunk system. I created 4 chunks
+                that were 16x16 and made a list that I could append different chunks to. It was very difficult
+                but I finally got it working. I then realized that the game didn't even look that good and 
+                I would rather maps that work kind of good and that would have ample places for the player 
+                to go and move around freely. I scrapped the infinintly generating world even though it was
+                pretty cool and went back to hand making a map. After this I started creating an enemy that 
+                could follow you around. I still have to make it attack you and powerups and alot of other 
+                stuff but it is a good start.
+            </p>
+        </div>
+    </div>
+    
+    <!-- ----------- footer ------------- -->
+    <div class="footer">
+        
+    </div>
+    <script>
+        var MenuItems = document.getElementById('MenuItems')
+
+        MenuItems.style.maxHeight = "0px"
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight = "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px";
+                }
+        }
+
+        // -------- product gallary ----------
+
+        var productImg = document.getElementById('product-img')
+        var smallImg = document.getElementsByClassName('small-img')
+
+        smallImg[0].onclick = function(){
+            productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function(){
+            productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function(){
+            productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function(){
+            productImg.src = smallImg[3].src;
+        }
+
+
+    </script>
+</body>
+</html>
