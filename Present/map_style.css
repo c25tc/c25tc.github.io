@@ -1,0 +1,221 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#body{
+    background-image: url("./images/backgrounds/Full\ Usa.png");
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(43, 43, 43);
+    /* background-size:cover; */
+    background-size: 1452px;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    transition: .6s;
+}
+.note{
+    top: 550px;
+    padding: 25px;
+    position: absolute;
+    color: #034b83;
+}
+h1{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.2rem;
+}
+/* -------------global------------ */
+.marker{
+    font-size: 60px;
+    position: fixed;
+    cursor: pointer;
+    color: #034b83;
+    transition: .6s;
+    background-color: Transparent;
+    border: none;
+    overflow: hidden;
+}
+    
+    .marker:hover{
+        color: #356994;
+        transition: .6s;
+        transform: translateY(-6px);
+}
+
+.back{
+    font-size: 60px;
+    color: rgb(105, 105, 105);
+    position: fixed;
+    top: 30px;
+    left: 33px;
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    transition: .6s;
+}
+
+    .back:hover{
+        font-size: 60px;
+        color: rgb(70, 70, 70);
+        position: fixed;
+        left: 28px;
+        background-color: Transparent;
+        border: none;
+        cursor:pointer;
+        overflow: hidden; 
+        transition: 1s;
+    }
+#img1{
+    width: auto; 
+    height: 200px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    margin-right: 10px;
+    border-radius: 20px; 
+    transition: .3s; 
+}
+
+#img1:hover{
+    transition: .6s;
+    transform: scale(150%);
+    margin: 100px 150px;
+}
+#img{
+    width: auto; 
+    height: 200px; 
+    margin: 50px 10px; 
+    border-radius: 20px; 
+    transition: .3s;
+}
+
+#img:hover{
+    transition: .6s;
+    transform: scale(150%);
+    margin: 100px;
+}
+/* -------x-----global------x----- */
+
+#fullscreen{
+    margin: 0%;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 100%;
+    display: none;
+}
+
+/* -------------usa------------ */
+#usa-vancouver{
+    font-size: 60px;
+    top: 160px;
+    left: 295px;
+}
+
+#usa-east-coast{
+    font-size: 60px;
+    top: 343px;
+    left: 1047px;
+}
+
+/* --------x----usa-------x---- */
+
+
+/* -------------east coast------------ */
+#east-nyc{
+    font-size: 60px;
+    top: 400px;
+    left: 563px;
+    display: none;
+}
+
+#east-og{
+    font-size: 60px;
+    top: 228px;
+    left: 762px;
+    display: none;
+}
+
+#east-oldplace{
+    font-size: 60px;
+    top: 480px;
+    left: 570px;
+    display: none;
+}
+
+#east-newplace{
+    font-size: 60px;
+    top: 360px;
+    left: 590px;
+    display: none;
+}
+
+/* -------x-----east coast------x----- */
+/* ---------------------------west coast------------------------ */
+#dimsum{
+    font-size: 60px;
+    top: 392px;
+    left: 822px;
+    display: none;
+}
+#west-house{
+    font-size: 60px;
+    top: 397px;
+    left: 879px;
+    display: none;
+}
+#granville{
+    font-size: 60px;
+    top: 640px;
+    left: 830px;
+    display: none;
+}
+#hotpot{
+    font-size: 60px;
+    top: 730px;
+    left: 930px;
+    display: none;
+}
+#hotpot:hover{
+    transform: translateY(8px)
+}
+#museum{
+    font-size: 60px;
+    top: 597px;
+    left: 5px;
+    display: none;
+}
+#museum:hover{
+    transform: translateX(-4px);
+}
+#play{
+    font-size: 60px;
+    top: 307px;
+    left: 839px;
+    display: none;
+}
+#west-resterant{
+    font-size: 60px;
+    top: 725px;
+    left: 980px;
+    display: none;
+}
+#rvyc{
+    font-size: 60px;
+    top: 625px;
+    left: 410px;
+    display: none;
+}
+#vhike{
+    font-size: 60px;
+    top: 5px;
+    left: 909px;
+    display: none;
+}
+#wedding{
+    font-size: 60px;
+    top: 415px;
+    left: 969px;
+    display: none;
+}
+/* ----------------x----------west coast-------------x---------- */
