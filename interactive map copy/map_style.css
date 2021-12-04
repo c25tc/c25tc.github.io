@@ -1,6 +1,7 @@
 *{
     margin: 0%;
     padding: 0%;
+    box-sizing: border-box;
 }
 #body{
     background-image: url("./images/backgrounds/Full\ Usa.png");
@@ -16,7 +17,7 @@
     font-size: 60px;
     position: fixed;
     cursor: pointer;
-    color: #00365f;
+    color: #034b83;
     transition: .6s;
     background-color: Transparent;
     border: none;
@@ -24,8 +25,9 @@
 }
     
     .marker:hover{
-        color: #003a69;
+        color: #356994;
         transition: .6s;
+        transform: translateY(-6px);
 }
 
 .back{
@@ -96,17 +98,11 @@
     top: 160px;
     left: 295px;
 }
-#usa-vancouver:hover{
-    top: 154px;
-}
 
 #usa-east-coast{
     font-size: 60px;
     top: 343px;
     left: 1047px;
-}
-#usa-east-coast:hover{
-    top: 337px;  
 }
 
 /* --------x----usa-------x---- */
@@ -120,19 +116,11 @@
     display: none;
 }
 
-#east-nyc:hover{
-    top: 394px;
-}
-
 #east-og{
     font-size: 60px;
     top: 228px;
     left: 762px;
     display: none;
-}
-
-#east-og:hover{
-    top: 222px;
 }
 
 #east-oldplace{
@@ -142,10 +130,6 @@
     display: none;
 }
 
-#east-oldplace:hover{
-    top: 474px;
-}
-
 #east-newplace{
     font-size: 60px;
     top: 360px;
@@ -153,8 +137,72 @@
     display: none;
 }
 
-#east-newplace:hover{
-    top: 354px;
-}
-
 /* -------x-----east coast------x----- */
+/* ---------------------------west coast------------------------ */
+#dimsum{
+    font-size: 60px;
+    top: 392px;
+    left: 822px;
+    display: none;
+}
+#west-house{
+    font-size: 60px;
+    top: 397px;
+    left: 879px;
+    display: none;
+}
+#granville{
+    font-size: 60px;
+    top: 640px;
+    left: 830px;
+    display: none;
+}
+#hotpot{
+    font-size: 60px;
+    top: 730px;
+    left: 930px;
+    display: none;
+}
+#hotpot:hover{
+    transform: translateY(8px)
+}
+#museum{
+    font-size: 60px;
+    top: 597px;
+    left: 5px;
+    display: none;
+}
+#museum:hover{
+    transform: translateX(-4px);
+}
+#play{
+    font-size: 60px;
+    top: 307px;
+    left: 839px;
+    display: none;
+}
+#west-resterant{
+    font-size: 60px;
+    top: 725px;
+    left: 980px;
+    display: none;
+}
+#rvyc{
+    font-size: 60px;
+    top: 625px;
+    left: 410px;
+    display: none;
+}
+#vhike{
+    font-size: 60px;
+    top: 5px;
+    left: 909px;
+    display: none;
+}
+#wedding{
+    font-size: 60px;
+    top: 415px;
+    left: 969px;
+    display: none;
+}
+/* ----------------x----------west coast-------------x---------- */
