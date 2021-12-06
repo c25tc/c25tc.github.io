@@ -354,7 +354,7 @@ input:focus{
 .journel-entry{
     margin: 10px 50px;
     padding: 20px;
-    background-color: #849da7;
+    background-color: var(--lightblue);
     border-radius: 10px;
 }
 #hashtag{
