@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .background{
+            width: 100vw;
+            height: 100vh;
+            background: rgb(100, 33, 23);
+        }
+    </style>
+    <title>color</title>
+</head>
+<body>
+    <div class="background"></div>
+    <script>
+        console.log(30/10);
+        bg = document.querySelector(".background");
+        var R;
+        var G;
+        var B;
+
+        // function getMousePos(event) {
+        //     R = event.clientX; B = event.clientY;
+        //     G = Math.floor(R/B)*20;
+
+        //     console.log("rgb("+R+","+B+","+G+");");
+        //     bg.style.backgroundColor = "rgb("+R+","+B+","+G+")";
+        // }
+
+        bg.addEventListener("click", function(event) {
+            R = event.clientX; 
+            B = event.clientY;
+            G = Math.floor(R/B)*20;
+
+            console.log("rgb("+R+","+B+","+G+");");
+            bg.style.backgroundColor = "rgb("+R+","+B+","+G+")";
+        });
+
+    </script>
+</body>
+</html>

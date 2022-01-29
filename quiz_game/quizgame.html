@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Supermercado+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="quizgame.css" />
+    <title>robo guess</title>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="quiz-page page hide">
+      <center>
+        <div class="question-box" onclick="next()">Start</div>
+      </center>
+
+      <div class="container">
+        <div class="answer-box1 box" onclick="submit(1)">
+          <div class="box1-txt"></div>
+        </div>
+        <div class="answer-box2 box" onclick="submit(2)">
+          <div class="box2-txt"></div>
+        </div>
+        <div class="answer-box3 box" onclick="submit(3)">
+          <div class="box3-txt"></div>
+        </div>
+        <div class="answer-box4 box" onclick="submit(4)">
+          <div class="box4-txt"></div>
+        </div>
+      </div>
+      <div class="glass">
+        Hi! <br />
+        please do well <br />
+        on this quiz...
+      </div>
+    </div>
+
+    <div class="select-page page">
+      <div class="logo">ROBO GUESS</div>
+      <center>
+        <div class="robots">
+          <div class="happy robot selected" onclick="changeRobot(0)">
+            <img
+              src="./HappyBot.png"
+              alt="happy bot"
+              style="width: 50px; height: 50px"
+            />
+          </div>
+          <div class="emoji robot" onclick="changeRobot(1)">🤖</div>
+          <div class="mean robot" onclick="changeRobot(0)">
+            <img
+              src="./MeanBot.png"
+              alt="happy bot"
+              style="width: 50px; height: 50px"
+            />
+          </div>
+        </div>
+      </center>
+
+      <div class="quiz">
+        <div class="name">entertainment</div>
+        <div class="play-quiz" onclick="startGame(0)">play</div>
+      </div>
+      <div class="quiz">
+        <div class="name">history</div>
+        <div class="play-quiz" onclick="startGame(1)">play</div>
+      </div>
+      <div class="quiz">
+        <div class="name">entertainment</div>
+        <div class="play-quiz" onclick="startGame(0)">play</div>
+      </div>
+      <div class="quiz">
+        <div class="name">entertainment</div>
+        <div class="play-quiz" onclick="startGame(0)">play</div>
+      </div>
+      <div class="quiz">
+        <div class="name">entertainment</div>
+        <div class="play-quiz" onclick="startGame(0)">play</div>
+      </div>
+      <div class="quiz">
+        <div class="name">entertainment</div>
+        <div class="play-quiz" onclick="startGame(0)">play</div>
+      </div>
+      <h1>&nbsp</h1>
+    </div>
+    <script src="quizgame.js"></script>
+  </body>
+</html>
