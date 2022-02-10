@@ -89,22 +89,6 @@ var happy = [
     "",
     "you may be missing something here 🤔",
   ],
-  [
-    "exelent!",
-    "okay thats better...keep it up :)",
-    "way to keep at it!",
-    "dont worry you are still doing great",
-    "keep trying i know you have it in you",
-    "are you okay???",
-  ],
-  [
-    "omg you are actually crazy at this!",
-    "way to stick with it",
-    "at least you got one right, right?",
-    "dont let this get you down!",
-    "you were doing so well before :( i know you have it in you!",
-    "maybe go see a doctor for your lack of braincells?",
-  ],
 ];
 var emoji = [
   ["👍", "", "", "", "", "🤔"],

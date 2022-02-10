@@ -111,6 +111,70 @@
             </p>
         </div>
     </div>
+    <div class="row website entry" style="display: block;">
+        <div class="journel-entry">
+            <h1>1/31</h1>
+            <h4 id="hashtag">#quizgame</h4>
+            <p>
+                I wanted to create a game that has a "robot" that responds to your answers. If you get the question wrong it
+                will say something different than if you get the question right. I also wanted it to be easy to switch between games,
+                keep it all on 1 html page (use javascript to change what is on the page so I can add animations) and switch the robot. 
+                I did this by creating a lot of arrays that would hold all of the answers, questions, voice lines ect. for the answers and 
+                questions it looked something like this:
+                var entertainment = [
+  [
+    "who is the girl in the beatles song Get Back?",
+    "Jane",
+    "Loretta",
+    "Jude",
+    "Madonna",
+    2,
+  ],
+  [
+    "what is the name of Michael Jackson's famous sister?",
+    "Jen",
+    "Laurie",
+    "Janet",
+    "Karen",
+    3,
+  ], 
+                for the voice lines it looked something like:
+                var happy = [
+  [
+    "Hey! Way to go! Keep it up!!!",
+    "",
+    "",
+    "",
+    "",
+    "okay... misclick? Really focus this time...",
+  ],
+  [
+    "Off to a great start! ready for more???",
+    "okay that is more like it i knew you had it in you",
+    "",
+    "",
+    "oops...everyone makes mistakes",
+    "don't worry! you can still turn it around :)",
+  ],
+                I had those empty strings in the middle becaused it is physically imposablet to get to those sanarios with the
+                way I produced the voice lines. The way i did it was the code kept track of two things, the number of question the person
+                has gotton correct and incorrect and what the person got on the last question. I made a variable that starts at 0
+                and if the person gets a question correct it adds one and vise versa. If the variable is bellow 0 and they got the question wrong
+                that makes it different than if the are bellow 0 and got the previous question right. That is why there are six voice lines for each 
+                question. 
+            </p>
+        </div>
+    </div>
+    <div class="row website entry" style="display: block;">
+        <div class="journel-entry">
+            <h1>1/31</h1>
+            <h4 id="hashtag">#nftgame</h4>
+            <p>
+                I wanted to create a website for my nft so that people could interact with it. I found this sdk called moralis 
+                that is exactly what I need. I have not done much yet but I have high hopes for whats to come.
+            </p>
+        </div>
+    </div>
     <!-- ----------- footer ------------- -->
     <div class="footer">
         
