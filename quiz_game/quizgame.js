@@ -62,6 +62,41 @@ var historys = [
   ["what is the last year?", "wrong", "wronger", "correct", "wrongest", 3],
   ["what is the last year?", "wrong", "wronger", "correct", "wrongest", 3],
 ];
+var compSci = [
+  [
+    "Inside which HTML element do we put the JavaScript?",
+    "<javascript>",
+    "<script>",
+    "<scripting>",
+    "<js>",
+    2,
+  ],
+  [
+    "Inside which HTML element do we put the css?",
+    "<link>",
+    "<css>",
+    "<style>",
+    "<source>",
+    3,
+  ],
+  [
+    "How do you create a function in JavaScript?",
+    "function myFunction()",
+    "function = myFunction() {}",
+    "functionmyFunction() {}",
+    "function myFunction() {}",
+    4,
+  ],
+  [
+    "how do you call a function?",
+    "call function myFunction()",
+    "call myFunction()",
+    "myFunction()",
+    "function myFunction()",
+    3,
+  ],
+  ["what is the last year?", "wrong", "wronger", "correct", "wrongest", 3],
+];
 var quizes = [entertainment, historys];
 // question box1 box2 box3 box4 answer-box-number
 var happy = [
@@ -110,6 +145,8 @@ var emoji = [
   ["👍", "", "", "", "", "🤔"],
   ["😁", "😊", "", "", "😅", "😭"],
   ["🥳", "", "😌", "🤨", "", "😰"],
+  ["😎", "😊", "🙂", "😕", "😟", "😡"],
+  ["🥶", "😆", "🤪", "🥲", "😐", "🤬"],
 ];
 var robots = [happy, emoji];
 // correct-happy correct-medium correct-mad wrong-happy wrong-medium wrong-mad

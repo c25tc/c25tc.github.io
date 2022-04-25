@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divs{
+            width: 100px;
+            height: 100px;
+            transition: all 1s ease-in-out;
+        }
+        #one{
+            background-color: red;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10px;
+            color: white;
+        }
+        #two{
+            background-color: green;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            color: black;
+        }
+        #three{
+            background-color: blue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            color: grey;
+        }
+        #three:hover{
+            background-color: black;
+        }
+        #two:hover{
+            background-color: black;
+        }
+        #one:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+        <div id="one" class="divs">one</div>
+        <div id="two" class="divs">two</div>
+        <div id="three" class="divs">three</div>
+        <a href="https://www.google.com">google</a>
+        <div class="change" onclick="changeColor()">change it</div>
+
+    <script>
+        let divone = document.getElementById('one');
+        let divtwo = document.getElementById('two');
+        let divthree = document.getElementById('three');
+        var divNumber = [0, 1, 2];
+        var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+        var clicked = true;
+
+        divone.addEventListener('click', () => {
+            divone.innerText = 'clicked';
+        });
+
+        divtwo.addEventListener('click', () => {
+            for (let i = 0; i < 100; i++) {
+                newdiv = document.createElement('div');
+                newdiv.innerText = 'new div';
+                document.body.appendChild(newdiv);
+            }
+        });
+        divthree.addEventListener('click', () => {
+            if (clicked){
+                document.body.style.backgroundColor = 'yellow';
+                clicked = !clicked;
+            } else {
+                document.body.style.backgroundColor = 'purple';
+                clicked = !clicked;
+            }
+        });
+
+        function changeColor () {
+            divone.style.backgroundColor = colors[divNumber[0]];
+            divtwo.style.backgroundColor = colors[divNumber[1]];
+            divthree.style.backgroundColor = colors[divNumber[2]];
+
+            for (let i = 0; i < divNumber.length; i++) {
+                console.log(divNumber[i]);
+                if (divNumber[i] > colors.length) {
+                    divNumber[i] = 0;
+                } else {
+                    divNumber[i] ++;
+                }
+
+                
+            }
+            
+        }
+
+        setInterval(changeColor, 1000)
+
+    </script>
+</body>
+</html>

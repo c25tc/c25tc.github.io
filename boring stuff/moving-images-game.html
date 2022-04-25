@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .virus{
+            background-image: url("./Taco_Crispy_Beef_990x725.png");
+            background-size: cover;
+            width: 160px;
+            height: 100px;
+            position: absolute;
+            transition: all ease-in-out .5s;
+        }
+    </style>
+    <title>GAMEEEEEEE</title>
+</head>
+<body>
+    <div id="score">0</div>
+    <script>
+        var pew = document.getElementById("sound");
+        var input = document.getElementById("score");
+        var x =0;
+
+        function createCorona() {
+            console.log("doing");
+            var corona = document.createElement("div");
+            corona.style.left = 1500 * Math.random() + "px";
+            corona.style.top = 900 * Math.random() + "px";
+            corona.classList.add("virus");
+            
+            document.body.appendChild(corona);
+            corona.addEventListener("click", function() {
+                x = x+1;
+                input.innerText = x;
+                var sound = document.createElement("audio");
+                sound.src = "https://soundboardguy.com/wp-content/uploads/2021/05/taco-bell-bong.mp3";
+                document.body.appendChild(sound);
+                corona.classList.remove("virus");
+                sound.play()
+            })
+            function changePosition() {
+                console.log("not");
+                corona.style.left = 1000 * Math.random() + "px";
+                corona.style.top = 1000 * Math.random() + "px";
+            }
+            setInterval(changePosition, 1000);
+        }
+
+    
+
+
+        setInterval(createCorona,1000);
+    </script>
+</body>
+</html>

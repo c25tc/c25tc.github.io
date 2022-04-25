@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      body {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #zone {
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        /*background-color: black;*/
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+      }
+
+      #ball {
+        border-radius: 50%;
+        background-color: green;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+
+        /*left: 200.4693878px;
+        top: 228.1632653px;*/
+      }
+      #ballSpot {
+        border-radius: 50%;
+        background-color: red;
+        z-index: 0;
+        position: relative;
+        transform: translate(-50%, -50%);
+
+        /*left: 200.4693878px;
+        top: 228.1632653px;*/
+      }
+
+      #timingCircle {
+        /*width: 30px;
+        height: 30px;*/
+        border-radius: 50%;
+        background-color: red;
+        position: relative;
+        opacity: 0.33;
+      }
+
+      .button {
+        width: 100px;
+        height: 40px;
+        background-color: green;
+        position: relative;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin: 15px;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      .button:hover {
+        background-color: rgb(52, 158, 52);
+        transform: scale(1.1);
+      }
+
+      #buttonBox {
+        width: 100%;
+        height: 80px;
+        background-color: goldenrod;
+        opacity: 50%;
+        margin: 0;
+      }
+      #distance {
+        width: 38px;
+        height: 104px;
+        /* height: 104px; */
+        background: rgb(236, 236, 236);
+        transform: perspective(6px) rotateX(5deg);
+        position: absolute;
+        z-index: -2;
+      }
+      #distanceProgress {
+        width: 38px;
+        height: 104px;
+        overflow: hidden;
+        background: rgba(103, 103, 224, 0.663);
+        transform: perspective(6px) rotateX(5deg);
+        position: absolute;
+        z-index: -2;
+        clip-path: inset(0px 0px 90px 0px);
+      }
+
+      .homePlate {
+        position: absolute;
+        left: 50%;
+        top: 94%;
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+    <title>Make a pitch bitch</title>
+  </head>
+  <body>
+    <div id="buttonBox">
+      <center>
+        <button id="littleLeagueFbB" class="button">Little League</button>
+        <button id="thirteenUFbB" class="button">13U</button>
+        <button id="varsityFbB" class="button">Varsity</button>
+        <button id="collegeFbB" class="button">College</button>
+        <button id="mlbFbB" class="button">MLB</button>
+        <button id="chapmanFbB" class="button">Chapman</button>
+      </center>
+    </div>
+
+    <div id="zone">
+      <div id="ball"></div>
+      <div id="ballSpot"></div>
+    </div>
+
+    <div id="distance"></div>
+    <div id="distanceProgress" class="clip"></div>
+
+    <svg
+      class="homePlate"
+      width="149"
+      height="66"
+      viewBox="0 0 149 66"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M149 39L74.8 66L0.5 39L9.5 0.5H74.8H138L149 39Z"
+        fill="#C4C4C4"
+      />
+    </svg>
+
+
+    <script>
+      var zone = document.getElementById("zone");
+      var ball = document.getElementById("ball");
+      var ballSpot = document.getElementById("ballSpot");
+      var distance = document.getElementById("distance");
+      var distanceProgress = document.getElementById("distanceProgress");
+      var mlb = document.getElementById("mlbFbB");
+      // declare variables
+      var initialBR = 15;
+      var currentBR;
+      var endingBR = 30;
+      var ballDistance = 104;
+
+      var zoneWidth = 173.4693878;
+      var zoneHeight = 233.1632653;
+
+      var initialPos = [zoneWidth / 2 + 0.5, 0];
+      var currentPos = [0, 0];
+      var endPos = [0, 0];
+
+      var littleLeagueFbT = 546.1866335;
+      var thirteenUFbT = 543.6323028;
+      var varsityFbT = 490.7572589;
+      var collegeFbT = 436.1901495;
+      //   var mlbFbT = 414;
+      var mlbFbT = 300;
+      var chapmanFbT = 373.5215362;
+      var iterations = 0;
+
+      var interval;
+
+      var xMove;
+      var yMove;
+
+      var isPitching = false;
+
+      zone.style.width = zoneWidth + "px";
+      zone.style.height = zoneHeight + "px";
+
+      distance.style.left = window.innerWidth / 2 - 20 + "px";
+      distance.style.top = 420 + "px";
+      distanceProgress.style.left = window.innerWidth / 2 - 20 + "px";
+      distanceProgress.style.top = 420 + "px";
+      distanceProgress.style.clipPath = "inset(0px 0px 104px 0px)"
+
+      function resetBall() {
+        setBallSize(initialBR);
+        setBallPosition(initialPos[0], initialPos[1]);
+      }
+
+      function setBallPosition(x, y) {
+        currentPos[0] = x;
+        currentPos[1] = y;
+        ball.style.left = x + "px";
+        ball.style.top = y + "px";
+      }
+
+      function createRandEndPos() {
+        x = Math.random() * (zoneWidth + 60) - 30;
+        y = Math.random() * (zoneHeight + 60) - 30;
+
+        endPos[0] = x;
+        endPos[1] = y;
+      }
+
+      function setBallSize(size) {
+        ball.style.width = String(size) + "px";
+        ball.style.height = String(size) + "px";
+      }
+
+      function pitch() {
+        isPitching = true;
+        console.log("hi");
+        resetBall();
+        createRandEndPos();
+        xMove = Math.abs(endPos[0] - initialPos[0]) / mlbFbT;
+        yMove = Math.abs(endPos[1] - initialPos[1]) / mlbFbT;
+        if (endPos[0] < initialPos[0]) xMove = -xMove;
+        if (endPos[1] < initialPos[1]) yMove = -yMove;
+        grow = Math.abs(initialBR - endingBR) / mlbFbT;
+        travel = 104 / mlbFbT;
+        currentBR = initialBR;
+
+        interval = setInterval(movePitch, 1);
+      }
+
+      function movePitch() {
+        currentPos[0] += xMove;
+        currentPos[1] += yMove;
+        currentBR += grow;
+        ballDistance -= travel;
+
+        distanceProgress.style.clipPath = "inset(0px 0px " + ballDistance+"px 0px)"
+        setBallSize(currentBR);
+        setBallPosition(currentPos[0], currentPos[1]);
+        iterations++;
+        if (iterations == mlbFbT) {
+        //   clearInterval(interval);
+          isInStrikeZone(currentPos[0], currentPos[1]);
+          console.log(endPos)
+          size = currentBR
+          ballSpot.style.left = endPos[0] + "px";
+          ballSpot.style.top = endPos[1] - size + "px";
+          ballSpot.style.width = size + "px";
+          ballSpot.style.height = size + "px";
+        //   iterations = 0;
+        //   ballDistance = 104
+        //   isPitching = false;
+        }
+      }
+
+      function isInStrikeZone(x, y) {
+        if (x > 0 || x < zoneWidth || y > 0 || y < zoneHeight) {
+          console.log("its in");
+        } else {
+          console.log("its out");
+        }
+      }
+
+      mlb.addEventListener("click", () => {
+          if (!isPitching) {
+            pitch()
+          }
+      })
+      
+    </script>
+  </body>
+</html>
