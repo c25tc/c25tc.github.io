@@ -173,10 +173,11 @@ function getRandomSafeSpot() {
 
   function initGame() {
 
-    new KeyPressListener("ArrowUp", () => handleArrowPress(0, -1))
-    new KeyPressListener("ArrowDown", () => handleArrowPress(0, 1))
-    new KeyPressListener("ArrowLeft", () => handleArrowPress(-1, 0))
-    new KeyPressListener("ArrowRight", () => handleArrowPress(1, 0))
+    // new KeyPressListener("ArrowUp", () => handleArrowPress(0, -1))
+    // new KeyPressListener("ArrowDown", () => handleArrowPress(0, 1))
+    // new KeyPressListener("ArrowLeft", () => handleArrowPress(-1, 0))
+    // new KeyPressListener("ArrowRight", () => handleArrowPress(1, 0))
+    document.addEventListener("keydown", (e) => handleArrowPress)
 
     const allPlayersRef = firebase.database().ref(`players`);
     const allCoinsRef = firebase.database().ref(`coins`);

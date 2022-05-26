@@ -1,27 +1,48 @@
 class KeyPressListener {
+  //   constructor(keyCode, callback) {
+  //     let keySafe = true;
+  //     this.keydownFunction = function(event) {
+  //       if (event.code === keyCode) {
+  //          if (keySafe) {
+  //             keySafe = false;
+  //             callback();
+  //          }
+  //       }
+  //    };
+  //    this.keyupFunction = function(event) {
+  //       if (event.code === keyCode) {
+  //          keySafe = true;
+  //       }
+  //    };
+  //    document.addEventListener("keydown", this.keydownFunction);
+  //    document.addEventListener("keyup", this.keyupFunction);
+  //   }
+
+  //   unbind() {
+  //     document.removeEventListener("keydown", this.keydownFunction);
+  //     document.removeEventListener("keyup", this.keyupFunction);
+  //   }
   constructor(keyCode, callback) {
     let keySafe = true;
-    this.keydownFunction = function(event) {
+    this.keydownFunction = function (event) {
       if (event.code === keyCode) {
-         if (keySafe) {
-            keySafe = false;
-            callback();
-         }  
+        if (keySafe) {
+          keySafe = false;
+          callback();
+        }
       }
-   };
-   this.keyupFunction = function(event) {
+    };
+    this.keyupFunction = function (event) {
       if (event.code === keyCode) {
-         keySafe = true;
-      }         
-   };
-   document.addEventListener("keydown", this.keydownFunction);
-   document.addEventListener("keyup", this.keyupFunction);
+        keySafe = true;
+      }
+    };
+    document.addEventListener("keydown", this.keydownFunction);
+    document.addEventListener("keyup", this.keyupFunction);
   }
 
-  unbind() { 
+  unbind() {
     document.removeEventListener("keydown", this.keydownFunction);
     document.removeEventListener("keyup", this.keyupFunction);
   }
-
-
 }

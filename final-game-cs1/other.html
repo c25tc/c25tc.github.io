@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: palegreen;
+        }
+        p {
+            background-color: rebeccapurple;
+        }
+        .alert {
+            background-color: rgba(255, 255, 255, 0.658);
+            border-radius: 10px;
+            padding: 20px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: 700;
+            filter: blur(0px);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .3s ease-in-out;
+        }
+        .hide-alert{
+            filter: blur(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="alert hide-alert">make sure you click back onto the game to continue moving</div>
+    <p>other other file</p>
+    <script>
+        let alert = document.querySelector(".alert");
+        document.addEventListener("keydown", () => {alert.classList.remove("hide-alert"); setTimeout(() => {  alert.classList.add("hide-alert"); console.log("yes")}, 2000);})
+    </script>
+</body>
+</html>
