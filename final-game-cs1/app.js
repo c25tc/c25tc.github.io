@@ -51,6 +51,12 @@ var frame = 0
 var current_frame = animations[state][frame]
 var change = false;
 var last_state = state;
+var has_seen_car = false;
+var has_seen_quiz = false;
+var has_seen_map = false;
+var has_seen_survivor = false;
+var has_seen_asci = false;
+var has_seen_nft = false;
 
 function state_handler() {
     if (left) {state = "walk-left"; last_direction = "left";}
@@ -131,12 +137,12 @@ function check_collision(hitbox) {
       
       if (hitbox[0] + hitbox[2]> x * TILESIZE && hitbox[0] < x * TILESIZE + TILESIZE && hitbox[1] + hitbox[3] > y * TILESIZE - TILESIZE && hitbox[1] < y * TILESIZE ) {
         if (element == 0) {el = 0}
-        if (element == 8) {container.classList.add("left"); picturemap.classList.remove("hide");}
-        if (element == 9) {container.classList.add("left"); survivor.classList.remove("hide");}
-        if (element == 10) {container.classList.add("left"); nft.classList.remove("hide");}
-        if (element == 11) {container.classList.add("left"); asci.classList.remove("hide");}
-        if (element == 12) {container.classList.add("left"); quiz.classList.remove("hide");}
-        if (element == 13) {container.classList.add("left"); car.classList.remove("hide");}
+        if (element == 8) {container.classList.add("left"); picturemap.classList.remove("hide"); has_seen_map = true;}
+        if (element == 9) {container.classList.add("left"); survivor.classList.remove("hide"); has_seen_survivor = true;}
+        if (element == 10) {container.classList.add("left"); nft.classList.remove("hide"); has_seen_nft = true;}
+        if (element == 11) {container.classList.add("left"); asci.classList.remove("hide"); has_seen_asci = true;}
+        if (element == 12) {container.classList.add("left"); quiz.classList.remove("hide"); has_seen_quiz = true;}
+        if (element == 13) {container.classList.add("left"); car.classList.remove("hide"); has_seen_car = true;}
         if (element == 1) {container.classList.remove("left"); closeAll()}
         if (element == 3) {has_swatter = true}
         if (element == 5) {has_youtube = true}
@@ -144,7 +150,7 @@ function check_collision(hitbox) {
         if (element == 2) {el = 1; if(!has_swatter){showMessage("hmm... it seems your code has a bug. see if you can find something to swat it away!");}}
         if (element == 4) {el = 2; if(!has_youtube){showMessage("uh oh! you don't have enough knowledge to enter this section. go watch a video to learn some more!");}}
         if (element == 6) {el = 3; if(!has_code){showMessage("you found an error! go find some code that can fix it...");}}
-        if (element == 20) {el = 4; if(!has_youtube || !swatter || !has_code){showMessage("This is a restricted section! You need to solve all of the problems in this project before you can go here!");}}
+        if (element == 20) {el = 4; if(!has_seen_quiz || !has_seen_car || !has_seen_map || !has_seen_survivor || !has_seen_asci || !has_seen_nft){showMessage("This is a restricted section! You need to visit all of my projects before you can go here!");}}
         if (element == 18) {showMessage("congratulations! <br> you have finished my cs1 coding experience");}
       }
     }
@@ -244,7 +250,7 @@ function checkMove(hitbox, direction) {
     !(el == 1 && has_swatter == false) &&
     !(el == 2 && has_youtube == false) &&
     !(el == 3 && has_code == false) &&
-    !(el == 4 && !has_code && !has_swatter && !has_code)
+    !(el == 4 && (!has_seen_quiz || !has_seen_car || !has_seen_map || !has_seen_survivor || !has_seen_asci || !has_seen_nft))
   ) {
     el = -1;
     return true;
